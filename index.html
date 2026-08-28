@@ -1,0 +1,2351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rakhi Surprise ❤️</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+html,body{
+    margin:0;
+    padding:0;
+    width:100%;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#120713;
+    overflow-x:hidden;
+}
+
+
+/* =========================================
+   PAGE
+========================================= */
+
+.page{
+    display:none;
+
+    min-height:100vh;
+
+    padding:25px 25px 65px;
+
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ffd9c7,
+        #fff5e8,
+        #ffd0bd
+    );
+}
+
+.page.active{
+    display:flex;
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.card{
+    position:relative;
+
+    width:100%;
+    max-width:900px;
+
+    min-height:650px;
+
+    padding:60px 35px 70px;
+
+    background:rgba(255,255,255,.94);
+
+    border:5px solid white;
+
+    border-radius:35px;
+
+    text-align:center;
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.35);
+
+    overflow:hidden;
+}
+
+.card::before{
+    content:"";
+
+    position:absolute;
+
+    inset:12px;
+
+    border:2px solid #efbfa6;
+
+    border-radius:27px;
+
+    pointer-events:none;
+}
+
+
+/* =========================================
+   TEXT
+========================================= */
+
+.title{
+    color:#a63b39;
+
+    font-size:
+        clamp(38px,7vw,70px);
+
+    font-weight:900;
+
+    line-height:1.1;
+
+    margin:15px 0 25px;
+
+    position:relative;
+
+    z-index:2;
+
+    cursor:default;
+}
+
+.subtitle{
+    color:#a63b39;
+
+    font-size:
+        clamp(27px,5vw,48px);
+
+    font-weight:800;
+
+    margin:15px 0 25px;
+
+    position:relative;
+
+    z-index:2;
+}
+
+.text{
+    color:#654b45;
+
+    font-size:20px;
+
+    line-height:1.6;
+
+    max-width:650px;
+
+    margin:20px auto;
+
+    position:relative;
+
+    z-index:2;
+}
+
+
+/* =========================================
+   NORMAL PHOTO
+========================================= */
+
+.photo{
+    width:450px;
+    height:370px;
+
+    margin:20px auto;
+
+    border-radius:50%;
+
+    background:#e8eeee;
+
+    border:7px solid white;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.2);
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:75px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    z-index:2;
+}
+
+.photo img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.btn{
+    border:none;
+
+    background:#ed5b2d;
+
+    color:white;
+
+    padding:14px 32px;
+
+    margin:8px;
+
+    border-radius:50px;
+
+    border:4px solid #d34821;
+
+    font-size:22px;
+
+    font-weight:900;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 6px 0 #bd3e1c;
+
+    position:relative;
+
+    z-index:5;
+
+    transition:.2s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+.btn:active{
+    transform:translateY(4px);
+
+    box-shadow:
+        0 2px 0 #bd3e1c;
+}
+
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.back-btn{
+    position:absolute;
+
+    top:25px;
+    left:25px;
+
+    border:none;
+
+    background:#ed5b2d;
+
+    color:white;
+
+    padding:10px 18px;
+
+    border-radius:30px;
+
+    border:3px solid #d34821;
+
+    font-size:18px;
+
+    font-weight:900;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 4px 0 #bd3e1c;
+
+    z-index:20;
+}
+
+
+/* =========================================
+   GIFTS
+========================================= */
+
+.gifts{
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    gap:30px;
+
+    flex-wrap:wrap;
+
+    margin:40px 0;
+}
+
+.gift{
+    border:none;
+
+    background:transparent;
+
+    font-size:100px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    position:relative;
+
+    z-index:5;
+}
+
+.gift:hover{
+    transform:
+        translateY(-12px)
+        rotate(-5deg)
+        scale(1.08);
+}
+
+.gift:active{
+    transform:scale(.9);
+}
+
+.click-text{
+    color:#a63b39;
+
+    font-size:
+        clamp(30px,6vw,55px);
+
+    font-weight:900;
+}
+
+
+/* =========================================
+   GIFT 1
+========================================= */
+
+.decor{
+    font-size:50px;
+
+    margin:10px;
+
+    cursor:pointer;
+
+    position:relative;
+
+    z-index:10;
+
+    user-select:none;
+}
+
+.polaroid{
+    width:300px;
+    height:210px;
+
+    background:white;
+
+    margin:20px auto;
+
+    padding:10px;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.2);
+
+    transform:rotate(2deg);
+}
+
+.polaroid .inner{
+    width:100%;
+    height:100%;
+
+    background:#ddd;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:60px;
+
+    overflow:hidden;
+}
+
+.polaroid .inner img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+
+/* =========================================
+   GIFT 2
+========================================= */
+
+.award{
+    font-size:100px;
+
+    margin:20px;
+}
+
+.name{
+    font-family:cursive;
+
+    font-size:
+        clamp(38px,7vw,65px);
+
+    color:#333;
+
+    margin:10px;
+}
+
+
+/* =========================================
+   MEMORY PAGE
+========================================= */
+
+.memory-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:18px;
+
+    max-width:700px;
+
+    margin:30px auto;
+
+    position:relative;
+
+    z-index:5;
+}
+
+
+/* =========================================
+   MEMORY FRAME
+========================================= */
+
+.memory{
+
+    height:180px;
+
+    background:#eeeeee;
+
+    border:8px solid #efb08b;
+
+    border-radius:12px;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.2);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    overflow:hidden;
+
+    position:relative;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    user-select:none;
+}
+
+.memory:hover{
+    transform:translateY(-4px);
+}
+
+
+/* =========================================
+   MEMORY IMAGE
+========================================= */
+
+.memory img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:none;
+
+    pointer-events:none;
+}
+
+
+/* =========================================
+   REVEALED
+========================================= */
+
+.memory.revealed img{
+    display:block;
+}
+
+
+/* =========================================
+   PLACEHOLDER
+========================================= */
+
+.memory-placeholder{
+
+    width:100%;
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    background:#eeeeee;
+
+    color:#777;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    text-align:center;
+
+    padding:10px;
+}
+
+.memory-placeholder span{
+
+    font-size:38px;
+
+    margin-bottom:8px;
+}
+
+
+/* =========================================
+   AFTER REVEAL
+========================================= */
+
+.memory.revealed .memory-placeholder{
+    display:none;
+}
+
+
+/* =========================================
+   INVISIBLE PHOTO INPUT
+========================================= */
+
+.photo-input{
+
+    position:fixed;
+
+    width:1px;
+    height:1px;
+
+    opacity:0;
+
+    pointer-events:none;
+}
+
+
+/* =========================================
+   MEMORY CHANGE HINT
+========================================= */
+
+.memory-change-hint{
+
+    color:#a63b39;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+    margin-top:5px;
+
+    opacity:.75;
+}
+
+
+/* =========================================
+   FINAL PAGE
+========================================= */
+
+.labels{
+    max-width:700px;
+
+    margin:25px auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:15px;
+
+    text-align:left;
+}
+
+.label{
+    color:#634942;
+
+    font-size:20px;
+
+    padding:8px;
+}
+
+
+/* =========================================
+   ARROW
+========================================= */
+
+.arrow{
+
+    position:absolute;
+
+    right:20px;
+
+    bottom:25px;
+
+    border:none;
+
+    background:transparent;
+
+    color:#d84d27;
+
+    font-size:70px;
+
+    cursor:pointer;
+
+    z-index:10;
+}
+
+
+/* =========================================
+   POPUP
+========================================= */
+
+.popup{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:rgba(0,0,0,.65);
+
+    z-index:9999;
+
+    padding:20px;
+}
+
+.popup.show{
+    display:flex;
+}
+
+.popup-box{
+
+    width:90%;
+
+    max-width:450px;
+
+    background:white;
+
+    padding:40px 25px;
+
+    border-radius:30px;
+
+    text-align:center;
+
+    animation:popupIn .5s ease;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.4);
+}
+
+.popup-emoji{
+    font-size:80px;
+
+    animation:popupBounce 1s infinite;
+}
+
+.popup-box h1{
+
+    color:#a63b39;
+
+    font-size:40px;
+
+    margin:10px 0;
+}
+
+.popup-box p{
+
+    color:#654b45;
+
+    font-size:20px;
+
+    line-height:1.5;
+}
+
+.close-btn{
+
+    background:#ed5b2d;
+
+    color:white;
+
+    border:3px solid #d34821;
+
+    border-radius:50px;
+
+    padding:12px 25px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 4px 0 #bd3e1c;
+}
+
+
+/* =========================================
+   CONFETTI
+========================================= */
+
+.confetti{
+
+    position:fixed;
+
+    top:-30px;
+
+    width:10px;
+    height:20px;
+
+    z-index:10000;
+
+    pointer-events:none;
+
+    animation:
+        confettiFall linear forwards;
+}
+
+@keyframes confettiFall{
+
+    0%{
+        transform:
+            translateY(-30px)
+            rotate(0deg);
+
+        opacity:1;
+    }
+
+    100%{
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity:.9;
+    }
+}
+
+
+/* =========================================
+   POPUP ANIMATION
+========================================= */
+
+@keyframes popupIn{
+
+    0%{
+        transform:scale(.3) rotate(-10deg);
+
+        opacity:0;
+    }
+
+    70%{
+        transform:scale(1.08);
+    }
+
+    100%{
+        transform:scale(1) rotate(0);
+
+        opacity:1;
+    }
+}
+
+@keyframes popupBounce{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.common-footer{
+
+    position:fixed;
+
+    bottom:0;
+    left:0;
+
+    width:100%;
+
+    padding:9px;
+
+    text-align:center;
+
+    background:rgba(18,7,19,.92);
+
+    color:#fff5e8;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    z-index:999;
+}
+
+.common-footer span{
+    color:#ff9b7a;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:600px){
+
+    .page{
+        padding:
+            10px
+            10px
+            60px;
+    }
+
+    .card{
+
+        min-height:95vh;
+
+        padding:
+            60px 18px 70px;
+    }
+
+    .photo{
+
+        width:190px;
+        height:190px;
+    }
+
+    .gift{
+        font-size:75px;
+    }
+
+    .labels{
+        grid-template-columns:1fr;
+    }
+
+    .memory-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:10px;
+
+        margin-top:20px;
+    }
+
+    .memory{
+
+        height:145px;
+
+        border-width:6px;
+    }
+
+    .memory-placeholder{
+        font-size:13px;
+    }
+
+    .memory-placeholder span{
+        font-size:32px;
+    }
+
+    .back-btn{
+
+        top:18px;
+        left:18px;
+
+        padding:8px 14px;
+
+        font-size:16px;
+    }
+
+    .popup-box{
+        padding:30px 20px;
+    }
+
+    .popup-emoji{
+        font-size:65px;
+    }
+
+    .popup-box h1{
+        font-size:32px;
+    }
+
+    .popup-box p{
+        font-size:18px;
+    }
+
+    .common-footer{
+        font-size:12px;
+        padding:7px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- =================================================
+     PAGE 1
+================================================= -->
+
+<section class="page active" id="page1">
+
+<div class="card">
+
+<div class="title">
+I Have Made Something For You 💝
+</div>
+
+<div class="photo">
+🌸
+</div>
+
+<div class="subtitle">
+Do You Wanna See It?
+</div>
+
+<button class="btn" onclick="openExcited()">
+YES ❤️
+</button>
+
+<button class="btn" onclick="openNo()">
+NO 😄
+</button>
+
+</div>
+
+</section>
+
+
+<!-- =================================================
+     PAGE 2
+================================================= -->
+
+<section class="page" id="page2">
+
+<div class="card">
+
+<button class="back-btn" onclick="goBack()">
+← Back
+</button>
+
+<div class="title">
+HOW DARE YOU?! 😤
+</div>
+
+<div class="photo">
+😏
+</div>
+
+<button class="btn" onclick="backHome()">
+TRY AGAIN 🔄
+</button>
+
+</div>
+
+</section>
+
+
+<!-- =================================================
+     PAGE 3
+================================================= -->
+
+<section class="page" id="page3">
+
+<div class="card">
+
+<button class="back-btn" onclick="goBack()">
+← Back
+</button>
+
+<div class="title">
+Are You Really Excited? 😍
+</div>
+
+<div class="photo">
+🥰
+</div>
+
+<button class="btn" onclick="openGifts()">
+YES ❤️
+</button>
+
+<button class="btn" onclick="openGifts()">
+YES 😍
+</button>
+
+</div>
+
+</section>
+
+
+<!-- =================================================
+     PAGE 4
+================================================= -->
+
+<section class="page" id="page4">
+
+<div class="card">
+
+<button class="back-btn" onclick="goBack()">
+← Back
+</button>
+
+<div class="title">
+Each Gift Has Something For You.. 🎁
+</div>
+
+<div class="gifts">
+
+<button class="gift" onclick="openGift1()">
+🎁
+</button>
+
+<button class="gift" onclick="openGift2()">
+🎁
+</button>
+
+<button class="gift" onclick="openGift3()">
+🎁
+</button>
+
+</div>
+
+<div class="click-text">
+CLICK ON THE GIFT
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =================================================
+     PAGE 5 - RAKSHABANDHAN
+================================================= -->
+
+<section class="page" id="page5">
+
+<div class="card">
+
+<button class="back-btn" onclick="goBack()">
+← Back
+</button>
+
+
+<!--
+    🪷 TAP THIS TO CHANGE RAKHI PHOTO
+-->
+
+<div
+    class="decor"
+    onclick="chooseRakhiPhoto()"
+    title="Tap to change photo"
+>
+🪷 ✨
+</div>
+
+
+<div class="title">
+HAPPY
+</div>
+
+<div class="subtitle">
+Rakshabandhan
+</div>
+
+
+<div class="polaroid">
+
+<div class="inner" id="rakhiPhotoBox">
+
+<span id="rakhiPlaceholder">
+📷
+</span>
+
+<img
+    id="rakhiPhoto"
+    src=""
+    alt="Rakhi Photo"
+    style="display:none;"
+>
+
+</div>
+
+</div>
+
+
+<div class="text">
+
+Here's to more laughs,
+random fights, inside jokes,
+and all the sibling chaos. ❤️
+
+</div>
+
+
+<button class="btn" onclick="showPopup()">
+Click ❤️
+</button>
+
+
+<!-- Invisible input for Rakhi photo -->
+
+<input
+    type="file"
+    id="rakhiInput"
+    class="photo-input"
+    accept="image/jpeg,image/jpg,image/png,image/webp"
+>
+
+</div>
+
+</section>
+
+
+<!-- =================================================
+     PAGE 6
+================================================= -->
+
+<section class="page" id="page6">
+
+<div class="card">
+
+<button class="back-btn" onclick="goBack()">
+← Back
+</button>
+
+<div class="title">
+Best Sister Award
+</div>
+
+<div class="text">
+This award is presented to:
+</div>
+
+<div class="name">
+Your Sister's Name
+</div>
+
+<div class="text">
+
+You are the most precious person
+I have ever had.
+
+<br><br>
+
+I just wanna say thank you
+for being in my life,
+listening to all my rants,
+and being there when I needed
+you the most. ❤️
+
+</div>
+
+<div class="award">
+🏅
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =================================================
+     PAGE 7 - MEMORIES
+================================================= -->
+
+<section class="page" id="page7">
+
+<div class="card">
+
+<button class="back-btn" onclick="goBack()">
+← Back
+</button>
+
+
+<!--
+   TAP "MEMORIES" TITLE
+   TO CHANGE PHOTOS
+-->
+
+<div
+    class="title"
+    id="memoryTitle"
+    onclick="chooseMemoryPhotos()"
+    title="Tap to change memory photos"
+>
+MEMORIES 📸
+</div>
+
+
+
+
+<!--
+   INVISIBLE INPUT
+-->
+
+<input
+    type="file"
+    id="photoInput"
+    class="photo-input"
+    accept="image/jpeg,image/jpg,image/png,image/webp"
+    multiple
+>
+
+
+<!--
+   12 MEMORY FRAMES
+-->
+
+<div
+    class="memory-grid"
+    id="memoryGrid"
+>
+</div>
+
+
+<div class="text">
+
+Our little memories that make
+everything special. ❤️
+
+</div>
+
+
+<button
+    class="arrow"
+    onclick="openFinal()"
+    aria-label="Next"
+>
+›
+</button>
+
+
+</div>
+
+</section>
+
+
+<!-- =================================================
+     PAGE 8
+================================================= -->
+
+<section class="page" id="page8">
+
+<div class="card">
+
+<button class="back-btn" onclick="goBack()">
+← Back
+</button>
+
+<div class="title">
+YOU ARE MY
+</div>
+
+<div class="photo">
+🥰
+</div>
+
+<div class="labels">
+
+<div class="label">
+🍜 2-Minute Maggie Buddy 😂
+</div>
+
+<div class="label">
+📸 Personal Photographer
+</div>
+
+<div class="label">
+👗 Fashion Advisor
+</div>
+
+<div class="label">
+😂 Unlimited Laugh Provider
+</div>
+
+<div class="label">
+🏠 Home Comfort Zoney
+</div>
+
+<div class="label">
+🎬 Entertainment Source
+</div>
+
+<div class="label">
+🔥 Drama Partner
+</div>
+
+</div>
+
+<div class="subtitle">
+
+...and forever my favourite sister ❤️
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =================================================
+     POPUP
+================================================= -->
+
+<div
+    class="popup"
+    id="popup"
+>
+
+<div class="popup-box">
+
+<div class="popup-emoji">
+🎉
+</div>
+
+<h1>
+Surprise! 🎊
+</h1>
+
+<p>
+
+Happy Rakshabandhan! ❤️
+
+<br>
+
+You are the best sister ever! 🥰
+
+</p>
+
+<button
+    class="close-btn"
+    onclick="closePopup()"
+>
+Awww ❤️
+</button>
+
+</div>
+
+</div>
+
+
+<!-- =================================================
+     FOOTER
+================================================= -->
+
+<footer class="common-footer">
+
+Created ❤️ by
+<span>Divyam</span>
+
+</footer>
+
+
+<script>
+
+
+/* =================================================
+   SETTINGS
+================================================= */
+
+const MAX_PHOTOS = 30;
+
+const MEMORY_STORAGE_KEY =
+    "rakhiMemoryPhotos";
+
+const RAKHI_STORAGE_KEY =
+    "rakhiMainPhoto";
+
+
+/* =================================================
+   PAGE CONTROL
+================================================= */
+
+function showPage(number){
+
+    document
+    .querySelectorAll(".page")
+    .forEach(function(page){
+
+        page.classList.remove("active");
+
+    });
+
+
+    const page =
+        document.getElementById(
+            "page"+number
+        );
+
+
+    if(page){
+
+        page.classList.add("active");
+
+    }
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+}
+
+
+/* =================================================
+   BACK BUTTON
+================================================= */
+
+function goBack(){
+
+    const activePage =
+        document.querySelector(
+            ".page.active"
+        );
+
+
+    if(!activePage){
+        return;
+    }
+
+
+    switch(activePage.id){
+
+        case "page2":
+            showPage(1);
+            break;
+
+        case "page3":
+            showPage(1);
+            break;
+
+        case "page4":
+            showPage(3);
+            break;
+
+        case "page5":
+            showPage(4);
+            break;
+
+        case "page6":
+            showPage(4);
+            break;
+
+        case "page7":
+            showPage(4);
+            break;
+
+        case "page8":
+            showPage(7);
+            break;
+
+    }
+}
+
+
+/* =================================================
+   PAGE 1
+================================================= */
+
+function openExcited(){
+
+    showPage(3);
+
+}
+
+
+function openNo(){
+
+    showPage(2);
+
+}
+
+
+function backHome(){
+
+    showPage(1);
+
+}
+
+
+/* =================================================
+   PAGE 3
+================================================= */
+
+function openGifts(){
+
+    showPage(4);
+
+}
+
+
+/* =================================================
+   GIFTS
+================================================= */
+
+function openGift1(){
+
+    showPage(5);
+
+}
+
+
+function openGift2(){
+
+    showPage(6);
+
+}
+
+
+function openGift3(){
+
+    showPage(7);
+
+}
+
+
+/* =================================================
+   FINAL
+================================================= */
+
+function openFinal(){
+
+    showPage(8);
+
+}
+
+
+/* =================================================
+   POPUP
+================================================= */
+
+function showPopup(){
+
+    const popup =
+        document.getElementById(
+            "popup"
+        );
+
+
+    popup.classList.add("show");
+
+
+    createConfetti();
+
+}
+
+
+function closePopup(){
+
+    document
+    .getElementById("popup")
+    .classList.remove("show");
+
+}
+
+
+/* =================================================
+   CONFETTI
+================================================= */
+
+function createConfetti(){
+
+    const colors = [
+
+        "#ff0000",
+        "#00a82d",
+        "#008cff",
+        "#ffd000",
+        "#ff6b00",
+        "#9b00ff",
+        "#ff4fa3"
+
+    ];
+
+
+    for(let i=0;i<120;i++){
+
+        const piece =
+            document.createElement("div");
+
+
+        piece.className =
+            "confetti";
+
+
+        piece.style.left =
+            Math.random()*100+"vw";
+
+
+        piece.style.background =
+            colors[
+                Math.floor(
+                    Math.random()*colors.length
+                )
+            ];
+
+
+        piece.style.width =
+            (5+Math.random()*10)+"px";
+
+
+        piece.style.height =
+            (8+Math.random()*18)+"px";
+
+
+        piece.style.animationDuration =
+            (2.5+Math.random()*3)+"s";
+
+
+        piece.style.animationDelay =
+            (Math.random()*1)+"s";
+
+
+        document.body.appendChild(piece);
+
+
+        setTimeout(function(){
+
+            piece.remove();
+
+        },6000);
+
+    }
+
+}
+
+
+/* =================================================
+   RAKHI PHOTO
+================================================= */
+
+const rakhiInput =
+    document.getElementById(
+        "rakhiInput"
+    );
+
+
+const rakhiPhoto =
+    document.getElementById(
+        "rakhiPhoto"
+    );
+
+
+const rakhiPlaceholder =
+    document.getElementById(
+        "rakhiPlaceholder"
+    );
+
+
+/*
+   Tap 🪷
+*/
+
+function chooseRakhiPhoto(){
+
+    rakhiInput.click();
+
+}
+
+
+/*
+   Load saved Rakhi photo
+*/
+
+function loadRakhiPhoto(){
+
+    const saved =
+        localStorage.getItem(
+            RAKHI_STORAGE_KEY
+        );
+
+
+    if(!saved){
+
+        rakhiPhoto.style.display =
+            "none";
+
+        rakhiPlaceholder.style.display =
+            "block";
+
+        return;
+
+    }
+
+
+    rakhiPhoto.src =
+        saved;
+
+    rakhiPhoto.style.display =
+        "block";
+
+    rakhiPlaceholder.style.display =
+        "none";
+}
+
+
+/*
+   Select Rakhi photo
+*/
+
+rakhiInput.addEventListener(
+    "change",
+    function(event){
+
+        const file =
+            event.target.files[0];
+
+
+        if(!file){
+            return;
+        }
+
+
+        if(!file.type.startsWith("image/")){
+
+            alert(
+                "Please select an image."
+            );
+
+            return;
+        }
+
+
+        const reader =
+            new FileReader();
+
+
+        reader.onload =
+            function(e){
+
+                const imageData =
+                    e.target.result;
+
+
+                try{
+
+                    localStorage.setItem(
+                        RAKHI_STORAGE_KEY,
+                        imageData
+                    );
+
+
+                    loadRakhiPhoto();
+
+                }
+                catch(error){
+
+                    alert(
+                        "Photo is too large. Please choose a smaller JPG/PNG photo."
+                    );
+
+                }
+
+            };
+
+
+        reader.readAsDataURL(file);
+
+
+        rakhiInput.value = "";
+
+    }
+);
+
+
+/* =================================================
+   MEMORY SYSTEM
+================================================= */
+
+const photoInput =
+    document.getElementById(
+        "photoInput"
+    );
+
+
+const memoryGrid =
+    document.getElementById(
+        "memoryGrid"
+    );
+
+
+/*
+   Tap MEMORIES title
+*/
+
+function chooseMemoryPhotos(){
+
+    photoInput.click();
+
+}
+
+
+/*
+   Compress photo
+   so 12 photos fit better
+*/
+
+function compressImage(file){
+
+    return new Promise(
+        function(resolve,reject){
+
+            const reader =
+                new FileReader();
+
+
+            reader.onload =
+                function(event){
+
+                    const img =
+                        new Image();
+
+
+                    img.onload =
+                        function(){
+
+                            const MAX_SIZE =
+                                1000;
+
+
+                            let width =
+                                img.width;
+
+
+                            let height =
+                                img.height;
+
+
+                            if(width > height){
+
+                                if(width > MAX_SIZE){
+
+                                    height =
+                                        height *
+                                        MAX_SIZE /
+                                        width;
+
+                                    width =
+                                        MAX_SIZE;
+
+                                }
+
+                            }
+                            else{
+
+                                if(height > MAX_SIZE){
+
+                                    width =
+                                        width *
+                                        MAX_SIZE /
+                                        height;
+
+                                    height =
+                                        MAX_SIZE;
+
+                                }
+
+                            }
+
+
+                            const canvas =
+                                document.createElement(
+                                    "canvas"
+                                );
+
+
+                            canvas.width =
+                                Math.round(width);
+
+
+                            canvas.height =
+                                Math.round(height);
+
+
+                            const ctx =
+                                canvas.getContext(
+                                    "2d"
+                                );
+
+
+                            ctx.drawImage(
+                                img,
+                                0,
+                                0,
+                                canvas.width,
+                                canvas.height
+                            );
+
+
+                            const result =
+                                canvas.toDataURL(
+                                    "image/jpeg",
+                                    0.75
+                                );
+
+
+                            resolve(result);
+
+                        };
+
+
+                    img.onerror =
+                        reject;
+
+
+                    img.src =
+                        event.target.result;
+
+                };
+
+
+            reader.onerror =
+                reject;
+
+
+            reader.readAsDataURL(file);
+
+        }
+    );
+
+}
+
+
+/*
+   Select up to 12 photos
+*/
+
+photoInput.addEventListener(
+    "change",
+    async function(event){
+
+        const files =
+            Array.from(
+                event.target.files
+            );
+
+
+        if(files.length === 0){
+            return;
+        }
+
+
+        const imageFiles =
+            files.filter(
+                function(file){
+
+                    return file.type
+                        .startsWith(
+                            "image/"
+                        );
+
+                }
+            );
+
+
+        /*
+           EXACTLY MAX 12
+        */
+
+        const selectedFiles =
+            imageFiles.slice(
+                0,
+                MAX_PHOTOS
+            );
+
+
+        if(selectedFiles.length === 0){
+
+            alert(
+                "Please select image files."
+            );
+
+            return;
+
+        }
+
+
+        /*
+           Show loading
+        */
+
+        memoryGrid.innerHTML = `
+
+            <div style="
+                grid-column:1/-1;
+                color:#a63b39;
+                font-weight:bold;
+                font-size:18px;
+                padding:20px;
+            ">
+                📸 Saving your memories...
+            </div>
+
+        `;
+
+
+        try{
+
+            const photos = [];
+
+
+            for(
+                let i=0;
+                i<selectedFiles.length;
+                i++
+            ){
+
+                const compressed =
+                    await compressImage(
+                        selectedFiles[i]
+                    );
+
+
+                photos.push(
+                    compressed
+                );
+
+            }
+
+
+            /*
+               SAVE 12 PHOTOS
+            */
+
+            localStorage.setItem(
+                MEMORY_STORAGE_KEY,
+                JSON.stringify(
+                    photos
+                )
+            );
+
+
+            /*
+               Display
+            */
+
+            loadSavedPhotos();
+
+
+        }
+        catch(error){
+
+            console.error(error);
+
+
+            alert(
+                "Could not save photos. Try smaller images."
+            );
+
+
+            loadSavedPhotos();
+
+        }
+
+
+        /*
+           Allow selecting
+           same photos again
+        */
+
+        photoInput.value = "";
+
+    }
+);
+
+
+/* =================================================
+   LOAD MEMORY PHOTOS
+================================================= */
+
+function loadSavedPhotos(){
+
+    let saved =
+        localStorage.getItem(
+            MEMORY_STORAGE_KEY
+        );
+
+
+    let photos = [];
+
+
+    if(saved){
+
+        try{
+
+            photos =
+                JSON.parse(saved);
+
+
+            if(!Array.isArray(photos)){
+
+                photos = [];
+
+            }
+
+        }
+        catch(error){
+
+            photos = [];
+
+        }
+
+    }
+
+
+    memoryGrid.innerHTML = "";
+
+
+    /*
+       ALWAYS CREATE 12 FRAMES
+    */
+
+    for(
+        let i=0;
+        i<MAX_PHOTOS;
+        i++
+    ){
+
+        const photo =
+            photos[i] || null;
+
+
+        createMemoryFrame(
+            photo,
+            i
+        );
+
+    }
+
+}
+
+
+/* =================================================
+   CREATE MEMORY FRAME
+================================================= */
+
+function createMemoryFrame(
+    photo,
+    index
+){
+
+    const frame =
+        document.createElement(
+            "div"
+        );
+
+
+    frame.className =
+        "memory";
+
+
+    /*
+       Grey placeholder
+    */
+
+    const placeholder =
+        document.createElement(
+            "div"
+        );
+
+
+    placeholder.className =
+        "memory-placeholder";
+
+
+    placeholder.innerHTML =
+        `
+        <span>📷</span>
+        TAP TO REVEAL
+        `;
+
+
+    frame.appendChild(
+        placeholder
+    );
+
+
+    /*
+       If photo exists
+    */
+
+    if(photo){
+
+        const img =
+            document.createElement(
+                "img"
+            );
+
+
+        img.src =
+            photo;
+
+
+        img.alt =
+            "Memory Photo "+(
+                index+1
+            );
+
+
+        frame.appendChild(
+            img
+        );
+
+
+        /*
+           Tap = reveal/hide
+        */
+
+        frame.addEventListener(
+            "click",
+            function(){
+
+                frame.classList.toggle(
+                    "revealed"
+                );
+
+            }
+        );
+
+    }
+    else{
+
+        /*
+           Empty frame
+           also opens photo selector
+        */
+
+        frame.addEventListener(
+            "click",
+            function(){
+
+                chooseMemoryPhotos();
+
+            }
+        );
+
+    }
+
+
+    memoryGrid.appendChild(
+        frame
+    );
+
+}
+
+
+/* =================================================
+   INITIAL LOAD
+================================================= */
+
+window.addEventListener(
+    "load",
+    function(){
+
+        loadSavedPhotos();
+
+        loadRakhiPhoto();
+
+    }
+);
+
+
+/* =================================================
+   ESC KEY CLOSE POPUP
+================================================= */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Escape"){
+
+            closePopup();
+
+        }
+
+    }
+);
+
+
+/* =================================================
+   CLICK OUTSIDE POPUP
+================================================= */
+
+document
+.getElementById("popup")
+.addEventListener(
+    "click",
+    function(event){
+
+        if(
+            event.target ===
+            this
+        ){
+
+            closePopup();
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
