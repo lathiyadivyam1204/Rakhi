@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -15,6 +16,7 @@
 html,body{
     margin:0;
     padding:0;
+    width:100%;
 }
 
 body{
@@ -23,42 +25,41 @@ body{
     overflow-x:hidden;
 }
 
-
-/* ================================
-   COMMON PAGE
-================================ */
+/* =========================================
+   PAGE
+========================================= */
 
 .page{
     display:none;
     min-height:100vh;
-    padding:25px;
+    padding:25px 25px 65px;
     align-items:center;
     justify-content:center;
     position:relative;
 
     background:
-    radial-gradient(circle at 20% 20%,#ffd7c2 0,transparent 25%),
-    radial-gradient(circle at 80% 80%,#f5b6a0 0,transparent 30%),
-    linear-gradient(135deg,#fff1e6,#f6c8b8);
+    linear-gradient(
+        135deg,
+        #ffd9c7,
+        #fff5e8,
+        #ffd0bd
+    );
 }
 
 .page.active{
     display:flex;
 }
 
-
-/* ================================
+/* =========================================
    CARD
-================================ */
+========================================= */
 
 .card{
     position:relative;
-
     width:100%;
     max-width:900px;
     min-height:650px;
-
-    padding:60px 35px 65px;
+    padding:60px 35px 70px;
 
     background:rgba(255,255,255,.94);
 
@@ -71,13 +72,10 @@ body{
         0 15px 45px rgba(0,0,0,.35);
 
     overflow:hidden;
-
-    z-index:2;
 }
 
 .card::before{
     content:"";
-
     position:absolute;
     inset:12px;
 
@@ -87,15 +85,15 @@ body{
     pointer-events:none;
 }
 
-
-/* ================================
+/* =========================================
    TEXT
-================================ */
+========================================= */
 
 .title{
     color:#a63b39;
 
-    font-size:clamp(38px,7vw,70px);
+    font-size:
+        clamp(38px,7vw,70px);
 
     font-weight:900;
 
@@ -104,20 +102,21 @@ body{
     margin:15px 0 25px;
 
     position:relative;
-    z-index:3;
+    z-index:2;
 }
 
 .subtitle{
     color:#a63b39;
 
-    font-size:clamp(27px,5vw,48px);
+    font-size:
+        clamp(27px,5vw,48px);
 
     font-weight:800;
 
     margin:15px 0 25px;
 
     position:relative;
-    z-index:3;
+    z-index:2;
 }
 
 .text{
@@ -132,17 +131,16 @@ body{
     margin:20px auto;
 
     position:relative;
-    z-index:3;
+    z-index:2;
 }
 
-
-/* ================================
-   PHOTO
-================================ */
+/* =========================================
+   NORMAL PHOTO
+========================================= */
 
 .photo{
-    width:230px;
-    height:230px;
+    width:450px;
+    height:370px;
 
     margin:20px auto;
 
@@ -164,7 +162,7 @@ body{
     overflow:hidden;
 
     position:relative;
-    z-index:3;
+    z-index:2;
 }
 
 .photo img{
@@ -173,10 +171,9 @@ body{
     object-fit:cover;
 }
 
-
-/* ================================
+/* =========================================
    BUTTON
-================================ */
+========================================= */
 
 .btn{
     border:none;
@@ -199,10 +196,11 @@ body{
 
     cursor:pointer;
 
-    box-shadow:0 6px 0 #bd3e1c;
+    box-shadow:
+        0 6px 0 #bd3e1c;
 
     position:relative;
-    z-index:10;
+    z-index:5;
 
     transition:.2s;
 }
@@ -213,13 +211,14 @@ body{
 
 .btn:active{
     transform:translateY(4px);
-    box-shadow:0 2px 0 #bd3e1c;
+
+    box-shadow:
+        0 2px 0 #bd3e1c;
 }
 
-
-/* ================================
+/* =========================================
    BACK BUTTON
-================================ */
+========================================= */
 
 .back-btn{
     position:absolute;
@@ -245,15 +244,15 @@ body{
 
     cursor:pointer;
 
-    box-shadow:0 4px 0 #bd3e1c;
+    box-shadow:
+        0 4px 0 #bd3e1c;
 
     z-index:20;
 }
 
-
-/* ================================
+/* =========================================
    GIFTS
-================================ */
+========================================= */
 
 .gifts{
     display:flex;
@@ -297,24 +296,29 @@ body{
 .click-text{
     color:#a63b39;
 
-    font-size:clamp(30px,6vw,55px);
+    font-size:
+        clamp(30px,6vw,55px);
 
     font-weight:900;
 }
 
-
-/* ================================
+/* =========================================
    GIFT 1
-================================ */
+========================================= */
 
 .decor{
     font-size:50px;
     margin:10px;
+
+    position:relative;
+    z-index:10;
+
+    user-select:none;
 }
 
 .polaroid{
-    width:550px;
-    height:330px;
+    width:300px;
+    height:210px;
 
     background:white;
 
@@ -322,23 +326,37 @@ body{
 
     padding:10px;
 
-    box-shadow:0 8px 20px rgba(0,0,0,.2);
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.2);
 
     transform:rotate(2deg);
+}
+
+.polaroid .inner{
+    width:100%;
+    height:100%;
+
+    background:#ddd;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:60px;
 
     overflow:hidden;
 }
 
-.polaroid img{
+.polaroid .inner img{
     width:100%;
     height:100%;
     object-fit:cover;
 }
 
-
-/* ================================
+/* =========================================
    GIFT 2
-================================ */
+========================================= */
 
 .award{
     font-size:100px;
@@ -348,50 +366,52 @@ body{
 .name{
     font-family:cursive;
 
-    font-size:clamp(38px,7vw,65px);
+    font-size:
+        clamp(38px,7vw,65px);
 
     color:#333;
 
     margin:10px;
 }
 
-
-/* ================================
+/* =========================================
    MEMORY PAGE
-================================ */
+========================================= */
 
 .memory-grid{
 
-    display:flex;
+    display:grid;
 
-    justify-content:center;
-    align-items:center;
+    grid-template-columns:
+        repeat(3,1fr);
 
     gap:18px;
 
-    flex-wrap:wrap;
+    max-width:700px;
 
     margin:30px auto;
 
-    max-width:760px;
+    position:relative;
+
+    z-index:5;
 }
 
-
-/* Memory frame */
+/* =========================================
+   MEMORY FRAME
+========================================= */
 
 .memory{
 
-    width:350px;
-    height:400px;
+    height:180px;
 
-    padding:7px;
+    background:#eeeeee;
 
-    background:#e9e9e9;
+    border:8px solid #efb08b;
 
-    border:7px solid #efb08b;
+    border-radius:12px;
 
     box-shadow:
-        0 6px 18px rgba(0,0,0,.25);
+        0 8px 20px rgba(0,0,0,.2);
 
     display:flex;
 
@@ -400,77 +420,22 @@ body{
 
     overflow:hidden;
 
-    cursor:pointer;
-
     position:relative;
 
-    transform:rotate(-4deg);
+    cursor:pointer;
 
-    transition:
-        transform .3s,
-        box-shadow .3s,
-        background .3s;
-}
+    transition:.3s;
 
-.memory:nth-child(even){
-    transform:rotate(4deg);
+    user-select:none;
 }
 
 .memory:hover{
-    transform:
-        translateY(-7px)
-        rotate(0deg)
-        scale(1.03);
-
-    box-shadow:
-        0 12px 25px rgba(0,0,0,.3);
+    transform:translateY(-4px);
 }
 
-
-/* Grey cover */
-
-.memory-cover{
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-        linear-gradient(
-            135deg,
-            #eeeeee,
-            #dcdcdc
-        );
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    flex-direction:column;
-
-    color:#777;
-
-    font-weight:bold;
-
-    font-size:17px;
-
-    text-align:center;
-
-    z-index:2;
-
-    transition:
-        opacity .6s ease,
-        transform .6s ease;
-}
-
-.memory-cover span{
-    font-size:35px;
-    margin-bottom:5px;
-}
-
-
-/* Actual photo */
+/* =========================================
+   MEMORY IMAGE
+========================================= */
 
 .memory img{
 
@@ -479,79 +444,76 @@ body{
 
     object-fit:cover;
 
-    display:block;
-
-    opacity:0;
-
-    transform:scale(1.15);
-
-    transition:
-        opacity .7s ease,
-        transform .7s ease;
-}
-
-
-/* Revealed */
-
-.memory.revealed img{
-
-    opacity:1;
-
-    transform:scale(1);
-}
-
-.memory.revealed .memory-cover{
-
-    opacity:0;
-
-    transform:scale(.8);
+    display:none;
 
     pointer-events:none;
 }
 
+/* =========================================
+   REVEALED
+========================================= */
 
-/* ================================
-   TAP MESSAGE
-================================ */
+.memory.revealed img{
+    display:block;
+}
 
-.tap-message{
+/* =========================================
+   PLACEHOLDER
+========================================= */
 
-    color:#a63b39;
+.memory-placeholder{
 
-    font-size:22px;
+    width:100%;
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    background:#eeeeee;
+
+    color:#777;
+
+    font-size:16px;
 
     font-weight:bold;
 
-    margin:10px 0 20px;
+    text-align:center;
 
-    animation:pulse 1.5s infinite;
+    padding:10px;
 }
 
-@keyframes pulse{
+.memory-placeholder span{
 
-    0%,100%{
-        opacity:1;
-    }
+    font-size:38px;
 
-    50%{
-        opacity:.55;
-    }
+    margin-bottom:8px;
 }
 
+/* =========================================
+   AFTER REVEAL
+========================================= */
 
-/* ================================
-   FINAL LABELS
-================================ */
+.memory.revealed .memory-placeholder{
+    display:none;
+}
+
+/* =========================================
+   FINAL PAGE
+========================================= */
 
 .labels{
-
     max-width:700px;
 
     margin:25px auto;
 
     display:grid;
 
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:
+        repeat(2,1fr);
 
     gap:15px;
 
@@ -566,17 +528,16 @@ body{
     padding:8px;
 }
 
-
-/* ================================
+/* =========================================
    ARROW
-================================ */
+========================================= */
 
 .arrow{
 
     position:absolute;
 
     right:20px;
-    bottom:15px;
+    bottom:25px;
 
     border:none;
 
@@ -591,10 +552,9 @@ body{
     z-index:10;
 }
 
-
-/* ================================
+/* =========================================
    POPUP
-================================ */
+========================================= */
 
 .popup{
 
@@ -610,6 +570,8 @@ body{
     background:rgba(0,0,0,.65);
 
     z-index:9999;
+
+    padding:20px;
 }
 
 .popup.show{
@@ -629,14 +591,13 @@ body{
 
     text-align:center;
 
+    animation:popupIn .5s ease;
+
     box-shadow:
         0 20px 60px rgba(0,0,0,.4);
-
-    animation:popupIn .5s ease;
 }
 
 .popup-emoji{
-
     font-size:80px;
 
     animation:popupBounce 1s infinite;
@@ -678,8 +639,53 @@ body{
 
     cursor:pointer;
 
-    box-shadow:0 4px 0 #bd3e1c;
+    box-shadow:
+        0 4px 0 #bd3e1c;
 }
+
+/* =========================================
+   CONFETTI
+========================================= */
+
+.confetti{
+
+    position:fixed;
+
+    top:-30px;
+
+    width:10px;
+    height:20px;
+
+    z-index:10000;
+
+    pointer-events:none;
+
+    animation:
+        confettiFall linear forwards;
+}
+
+@keyframes confettiFall{
+
+    0%{
+        transform:
+            translateY(-30px)
+            rotate(0deg);
+
+        opacity:1;
+    }
+
+    100%{
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity:.9;
+    }
+}
+
+/* =========================================
+   POPUP ANIMATION
+========================================= */
 
 @keyframes popupIn{
 
@@ -705,54 +711,13 @@ body{
     }
 
     50%{
-        transform:translateY(-15px) rotate(8deg);
+        transform:translateY(-12px);
     }
 }
 
-
-/* ================================
-   CONFETTI
-================================ */
-
-.confetti{
-
-    position:fixed;
-
-    top:-30px;
-
-    width:12px;
-    height:25px;
-
-    z-index:10000;
-
-    pointer-events:none;
-
-    animation:confettiFall linear forwards;
-}
-
-@keyframes confettiFall{
-
-    0%{
-        transform:
-            translateY(-30px)
-            rotate(0deg);
-
-        opacity:1;
-    }
-
-    100%{
-        transform:
-            translateY(110vh)
-            rotate(720deg);
-
-        opacity:.9;
-    }
-}
-
-
-/* ================================
+/* =========================================
    FOOTER
-================================ */
+========================================= */
 
 .common-footer{
 
@@ -782,23 +747,29 @@ body{
     color:#ff9b7a;
 }
 
-
-/* ================================
+/* =========================================
    MOBILE
-================================ */
+========================================= */
 
 @media(max-width:600px){
 
     .page{
-        padding:10px;
+        padding:
+            10px
+            10px
+            60px;
     }
 
     .card{
+
         min-height:95vh;
-        padding:60px 18px 55px;
+
+        padding:
+            60px 18px 70px;
     }
 
     .photo{
+
         width:190px;
         height:190px;
     }
@@ -807,19 +778,42 @@ body{
         font-size:75px;
     }
 
-    .memory{
-        width:105px;
-        height:140px;
-    }
-
     .labels{
         grid-template-columns:1fr;
     }
 
+    .memory-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:10px;
+
+        margin-top:20px;
+    }
+
+    .memory{
+
+        height:145px;
+
+        border-width:6px;
+    }
+
+    .memory-placeholder{
+        font-size:13px;
+    }
+
+    .memory-placeholder span{
+        font-size:32px;
+    }
+
     .back-btn{
+
         top:18px;
         left:18px;
+
         padding:8px 14px;
+
         font-size:16px;
     }
 
@@ -847,14 +841,14 @@ body{
 }
 
 </style>
+
 </head>
 
 <body>
 
-
-<!-- ==================================================
+<!-- =========================================
      PAGE 1
-================================================== -->
+========================================= -->
 
 <section class="page active" id="page1">
 
@@ -885,9 +879,9 @@ NO 😄
 </section>
 
 
-<!-- ==================================================
+<!-- =========================================
      PAGE 2
-================================================== -->
+========================================= -->
 
 <section class="page" id="page2">
 
@@ -914,9 +908,9 @@ TRY AGAIN 🔄
 </section>
 
 
-<!-- ==================================================
+<!-- =========================================
      PAGE 3
-================================================== -->
+========================================= -->
 
 <section class="page" id="page3">
 
@@ -947,9 +941,9 @@ YES 😍
 </section>
 
 
-<!-- ==================================================
+<!-- =========================================
      PAGE 4
-================================================== -->
+========================================= -->
 
 <section class="page" id="page4">
 
@@ -988,9 +982,9 @@ CLICK ON THE GIFT
 </section>
 
 
-<!-- ==================================================
-     PAGE 5 - GIFT 1
-================================================== -->
+<!-- =========================================
+     PAGE 5 - HAPPY RAKSHABANDHAN
+========================================= -->
 
 <section class="page" id="page5">
 
@@ -1014,7 +1008,14 @@ Rakshabandhan
 
 <div class="polaroid">
 
-<img src="brosis.jpg" alt="Rakhi Memory" width="500px">
+<div class="inner">
+
+<img
+    src="brosies.jpg"
+    alt="Brosies"
+>
+
+</div>
 
 </div>
 
@@ -1035,9 +1036,9 @@ Click ❤️
 </section>
 
 
-<!-- ==================================================
-     PAGE 6 - GIFT 2
-================================================== -->
+<!-- =========================================
+     PAGE 6
+========================================= -->
 
 <section class="page" id="page6">
 
@@ -1056,7 +1057,7 @@ This award is presented to:
 </div>
 
 <div class="name">
-Sibling
+Your Sister's Name
 </div>
 
 <div class="text">
@@ -1083,9 +1084,9 @@ you the most. ❤️
 </section>
 
 
-<!-- ==================================================
-     PAGE 7 - MEMORY
-================================================== -->
+<!-- =========================================
+     PAGE 7 - MEMORIES
+========================================= -->
 
 <section class="page" id="page7">
 
@@ -1099,357 +1100,10 @@ you the most. ❤️
 MEMORIES 📸
 </div>
 
-<div class="tap-message">
-Tap each photo to reveal ❤️
-</div>
-
-<div class="memory-grid">
-
-
-<!-- MEMORY 1 -->
-
-<div class="memory" onclick="revealPhoto(this)">
-
-<img src="1.jpg" alt="Memory 1">
-
-<div class="memory-cover">
-<span>📷</span>
-TAP TO REVEAL
-</div>
-
-</div>
-
-
-<!-- MEMORY 2 -->
-
-<div class="memory" onclick="revealPhoto(this)">
-
-<img src="2.jpg" alt="Memory 2">
-
-<div class="memory-cover">
-<span>📷</span>
-TAP TO REVEAL
-</div>
-
-</div>
-
-
-<!-- MEMORY 3 -->
-
-<div class="memory" onclick="revealPhoto(this)">
-
-<img src="3.jpg" alt="Memory 3">
-
-<div class="memory-cover">
-<span>📷</span>
-TAP TO REVEAL
-</div>
-
-</div>
-
-
-<!-- MEMORY 4 -->
-
-<div class="memory" onclick="revealPhoto(this)">
-
-<img src="4.jpg" alt="Memory 4">
-
-<div class="memory-cover">
-<span>📷</span>
-TAP TO REVEAL
-</div>
-
-</div>
-
-
-<!-- MEMORY 5 -->
-
-<div class="memory" onclick="revealPhoto(this)">
-
-<img src="5.jpg" alt="Memory 5">
-
-<div class="memory-cover">
-<span>📷</span>
-TAP TO REVEAL
-</div>
-
-</div>
-
-<!-- MEMORY 6 -->
-
-<div class="memory" onclick="revealPhoto(this)">
-
-<img src="6.jpg" alt="Memory 6">
-
-<div class="memory-cover">
-<span>📷</span>
-TAP TO REVEAL
-</div>
-
-</div>
-
-<!-- MEMORY 7 -->
-
-<div class="memory" onclick="revealPhoto(this)">
-
-<img src="7.jpg" alt="Memory 7">
-
-<div class="memory-cover">
-<span>📷</span>
-TAP TO REVEAL
-</div>
-
-</div>
-
-<!-- MEMORY 8 -->
-
-<div class="memory" onclick="revealPhoto(this)">
-
-<img src="8.jpg" alt="Memory 8">
-
-<div class="memory-cover">
-<span>📷</span>
-TAP TO REVEAL
-</div>
-
-</div>
-
-<!-- MEMORY 9 -->
-
-<div class="memory" onclick="revealPhoto(this)">
-
-<img src="9.jpg" alt="Memory 9">
-
-<div class="memory-cover">
-<span>📷</span>
-TAP TO REVEAL
-</div>
-
-</div> 
-
-<!-- MEMORY 10 -->
-
-<div class="memory" onclick="revealPhoto(this)">
-
-<img src="10.jpg" alt="Memory 10">
-
-<div class="memory-cover">
-<span>📷</span>
-TAP TO REVEAL
-</div>
-
-</div>
-
-<!-- MEMORY 11 -->
-
-<div class="memory" onclick="revealPhoto(this)">
-
-<img src="11.jpg" alt="Memory 11">
-
-<div class="memory-cover">
-<span>📷</span>
-TAP TO REVEAL
-</div>
-
-</div>
-
-<!-- MEMORY 12 -->
-
-<div class="memory" onclick="revealPhoto(this)">
-
-<img src="12.jpg" alt="Memory 12">
-
-<div class="memory-cover">
-<span>📷</span>
-TAP TO REVEAL
-</div>
-
-</div>
-
-<!-- MEMORY 13 -->
-
-<div class="memory" onclick="revealPhoto(this)">
-
-<img src="13.jpg" alt="Memory 13">
-
-<div class="memory-cover">
-<span>📷</span>
-TAP TO REVEAL
-</div>
-
-</div>
-
-<!-- MEMORY 14 -->
-
-<div class="memory" onclick="revealPhoto(this)">
-
-<img src="14.jpg" alt="Memory 14">
-
-<div class="memory-cover">
-<span>📷</span>
-TAP TO REVEAL
-</div>
-
-</div>
-
-<!-- MEMORY 15 -->
-
-<div class="memory" onclick="revealPhoto(this)">
-
-<img src="15.jpg" alt="Memory 15">
-
-<div class="memory-cover">
-<span>📷</span>
-TAP TO REVEAL
-</div>
-
-</div>
-
-<!-- MEMORY 16 -->
-
-<div class="memory" onclick="revealPhoto(this)">
-
-<img src="16.jpg" alt="Memory 16">
-
-<div class="memory-cover">
-<span>📷</span>
-TAP TO REVEAL
-</div>
-
-</div>
-
-<!-- MEMORY 17 -->
-
-<div class="memory" onclick="revealPhoto(this)">
-
-<img src="17.jpg" alt="Memory 17">
-
-<div class="memory-cover">
-<span>📷</span>
-TAP TO REVEAL
-</div>
-
-</div>
-
-<!-- MEMORY 18 -->
-
-<div class="memory" onclick="revealPhoto(this)">
-
-<img src="18.jpg" alt="Memory 18">
-
-<div class="memory-cover">
-<span>📷</span>
-TAP TO REVEAL
-</div>
-
-</div>
-
-<!-- MEMORY 19 -->
-
-<div class="memory" onclick="revealPhoto(this)">
-
-<img src="19.jpg" alt="Memory 19">
-
-<div class="memory-cover">
-<span>📷</span>
-TAP TO REVEAL
-</div>
-
-</div>
-
-<!-- MEMORY 20 -->
-
-<div class="memory" onclick="revealPhoto(this)">
-
-<img src="20.jpg" alt="Memory 20">
-
-<div class="memory-cover">
-<span>📷</span>
-TAP TO REVEAL
-</div>
-
-</div>
-
-<!-- MEMORY 21 -->
-
-<div class="memory" onclick="revealPhoto(this)">
-
-<img src="21.jpg" alt="Memory 21">
-
-<div class="memory-cover">
-<span>📷</span>
-TAP TO REVEAL
-</div>
-
-</div>
-
-<!-- MEMORY 22 -->
-
-<div class="memory" onclick="revealPhoto(this)">
-
-<img src="22.jpg" alt="Memory 22">
-
-<div class="memory-cover">
-<span>📷</span>
-TAP TO REVEAL
-</div>
-
-</div>
-
-<!-- MEMORY 23 -->
-
-<div class="memory" onclick="revealPhoto(this)">
-
-<img src="23.jpg" alt="Memory 23">
-
-<div class="memory-cover">
-<span>📷</span>
-TAP TO REVEAL
-</div>
-
-</div>
-
-<!-- MEMORY 24 -->
-
-<div class="memory" onclick="revealPhoto(this)">
-
-<img src="24.jpg" alt="Memory 24">
-
-<div class="memory-cover">
-<span>📷</span>
-TAP TO REVEAL
-</div>
-
-</div>
-
-<!-- MEMORY 25 -->
-
-<div class="memory" onclick="revealPhoto(this)">
-
-<img src="25.jpg" alt="Memory 25">
-
-<div class="memory-cover">
-<span>📷</span>
-TAP TO REVEAL
-</div>
-
-</div>
-
-<!-- MEMORY 26 -->
-
-<div class="memory" onclick="revealPhoto(this)">
-
-<img src="26.jpg" alt="Memory 26">
-
-<div class="memory-cover">
-<span>📷</span>
-TAP TO REVEAL
-</div>
-
-</div>
-
-
-
+<div
+    class="memory-grid"
+    id="memoryGrid"
+>
 </div>
 
 <div class="text">
@@ -1459,8 +1113,12 @@ everything special. ❤️
 
 </div>
 
-<button class="arrow" onclick="openFinal()">
-
+<button
+    class="arrow"
+    onclick="openFinal()"
+    aria-label="Next"
+>
+›
 </button>
 
 </div>
@@ -1468,9 +1126,9 @@ everything special. ❤️
 </section>
 
 
-<!-- ==================================================
+<!-- =========================================
      PAGE 8
-================================================== -->
+========================================= -->
 
 <section class="page" id="page8">
 
@@ -1515,6 +1173,14 @@ YOU ARE MY
 </div>
 
 <div class="label">
+🥺 Emotional Support System
+</div>
+
+<div class="label">
+🎵 Music Buddy
+</div>
+
+<div class="label">
 🔥 Drama Partner
 </div>
 
@@ -1529,11 +1195,14 @@ YOU ARE MY
 </section>
 
 
-<!-- ==================================================
+<!-- =========================================
      POPUP
-================================================== -->
+========================================= -->
 
-<div class="popup" id="popup">
+<div
+    class="popup"
+    id="popup"
+>
 
 <div class="popup-box">
 
@@ -1546,4 +1215,524 @@ Surprise! 🎊
 </h1>
 
 <p>
-Happ
+
+Happy Rakshabandhan! ❤️
+
+<br>
+
+You are the best sisters ever! 🥰
+
+</p>
+
+<button
+    class="close-btn"
+    onclick="closePopup()"
+>
+Awww ❤️
+</button>
+
+</div>
+
+</div>
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer class="common-footer">
+
+Created ❤️ by
+<span>Divyam</span>
+
+</footer>
+
+
+<script>
+
+/* =========================================
+   PHOTO FILE NAMES
+========================================= */
+
+const MEMORY_PHOTOS = [];
+
+for(let i = 1; i <= 26; i++){
+
+    MEMORY_PHOTOS.push(
+        i + ".jpg"
+    );
+
+}
+
+
+/* =========================================
+   PAGE CONTROL
+========================================= */
+
+function showPage(number){
+
+    document
+    .querySelectorAll(".page")
+    .forEach(function(page){
+
+        page.classList.remove("active");
+
+    });
+
+
+    const page =
+        document.getElementById(
+            "page"+number
+        );
+
+
+    if(page){
+
+        page.classList.add("active");
+
+    }
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+function goBack(){
+
+    const activePage =
+        document.querySelector(
+            ".page.active"
+        );
+
+
+    if(!activePage){
+        return;
+    }
+
+
+    switch(activePage.id){
+
+        case "page2":
+            showPage(1);
+            break;
+
+        case "page3":
+            showPage(1);
+            break;
+
+        case "page4":
+            showPage(3);
+            break;
+
+        case "page5":
+            showPage(4);
+            break;
+
+        case "page6":
+            showPage(4);
+            break;
+
+        case "page7":
+            showPage(4);
+            break;
+
+        case "page8":
+            showPage(7);
+            break;
+
+    }
+
+}
+
+
+/* =========================================
+   PAGE 1
+========================================= */
+
+function openExcited(){
+
+    showPage(3);
+
+}
+
+
+function openNo(){
+
+    showPage(2);
+
+}
+
+
+function backHome(){
+
+    showPage(1);
+
+}
+
+
+/* =========================================
+   PAGE 3
+========================================= */
+
+function openGifts(){
+
+    showPage(4);
+
+}
+
+
+/* =========================================
+   GIFTS
+========================================= */
+
+function openGift1(){
+
+    showPage(5);
+
+}
+
+
+function openGift2(){
+
+    showPage(6);
+
+}
+
+
+function openGift3(){
+
+    showPage(7);
+
+}
+
+
+/* =========================================
+   FINAL
+========================================= */
+
+function openFinal(){
+
+    showPage(8);
+
+}
+
+
+/* =========================================
+   POPUP
+========================================= */
+
+function showPopup(){
+
+    const popup =
+        document.getElementById(
+            "popup"
+        );
+
+
+    popup.classList.add("show");
+
+
+    createConfetti();
+
+}
+
+
+function closePopup(){
+
+    document
+    .getElementById("popup")
+    .classList.remove("show");
+
+}
+
+
+/* =========================================
+   CONFETTI
+========================================= */
+
+function createConfetti(){
+
+    const colors = [
+
+        "#ff0000",
+        "#00a82d",
+        "#008cff",
+        "#ffd000",
+        "#ff6b00",
+        "#9b00ff",
+        "#ff4fa3"
+
+    ];
+
+
+    for(let i=0;i<120;i++){
+
+        const piece =
+            document.createElement("div");
+
+
+        piece.className =
+            "confetti";
+
+
+        piece.style.left =
+            Math.random()*100+"vw";
+
+
+        piece.style.background =
+            colors[
+                Math.floor(
+                    Math.random()*colors.length
+                )
+            ];
+
+
+        piece.style.width =
+            (5+Math.random()*10)+"px";
+
+
+        piece.style.height =
+            (8+Math.random()*18)+"px";
+
+
+        piece.style.animationDuration =
+            (2.5+Math.random()*3)+"s";
+
+
+        piece.style.animationDelay =
+            (Math.random()*1)+"s";
+
+
+        document.body.appendChild(
+            piece
+        );
+
+
+        setTimeout(function(){
+
+            piece.remove();
+
+        },6000);
+
+    }
+
+}
+
+
+/* =========================================
+   MEMORY SYSTEM
+========================================= */
+
+const memoryGrid =
+    document.getElementById(
+        "memoryGrid"
+    );
+
+
+/*
+   Create 26 memory frames
+*/
+
+function loadMemoryPhotos(){
+
+    memoryGrid.innerHTML = "";
+
+
+    MEMORY_PHOTOS.forEach(
+        function(photoName,index){
+
+            createMemoryFrame(
+                photoName,
+                index
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================
+   CREATE MEMORY FRAME
+========================================= */
+
+function createMemoryFrame(
+    photoName,
+    index
+){
+
+    const frame =
+        document.createElement(
+            "div"
+        );
+
+
+    frame.className =
+        "memory";
+
+
+    /*
+       Grey placeholder first
+    */
+
+    const placeholder =
+        document.createElement(
+            "div"
+        );
+
+
+    placeholder.className =
+        "memory-placeholder";
+
+
+    placeholder.innerHTML =
+        `
+        <span>📷</span>
+        TAP TO REVEAL
+        `;
+
+
+    frame.appendChild(
+        placeholder
+    );
+
+
+    /*
+       Photo
+    */
+
+    const img =
+        document.createElement(
+            "img"
+        );
+
+
+    img.src =
+        photoName;
+
+
+    img.alt =
+        "Memory Photo "+(
+            index+1
+        );
+
+
+    /*
+       If image doesn't exist,
+       keep grey frame
+    */
+
+    img.onerror =
+        function(){
+
+            img.remove();
+
+        };
+
+
+    frame.appendChild(
+        img
+    );
+
+
+    /*
+       TAP = REVEAL / HIDE
+    */
+
+    frame.addEventListener(
+        "click",
+        function(){
+
+            /*
+               Only reveal if
+               image loaded successfully
+            */
+
+            if(
+                img.complete &&
+                img.naturalWidth > 0
+            ){
+
+                frame.classList.toggle(
+                    "revealed"
+                );
+
+            }
+
+        }
+    );
+
+
+    memoryGrid.appendChild(
+        frame
+    );
+
+}
+
+
+/* =========================================
+   INITIAL LOAD
+========================================= */
+
+window.addEventListener(
+    "load",
+    function(){
+
+        loadMemoryPhotos();
+
+    }
+);
+
+
+/* =========================================
+   ESC KEY CLOSE POPUP
+========================================= */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Escape"){
+
+            closePopup();
+
+        }
+
+    }
+);
+
+
+/* =========================================
+   CLICK OUTSIDE POPUP
+========================================= */
+
+document
+.getElementById("popup")
+.addEventListener(
+    "click",
+    function(event){
+
+        if(
+            event.target ===
+            this
+        ){
+
+            closePopup();
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
